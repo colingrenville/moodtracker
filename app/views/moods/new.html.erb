@@ -1,0 +1,22 @@
+<p id="newtitle">New Day</p>
+
+<div class="yourmood">
+<%= form_for @mood do |f| %>
+
+	<div class="field">
+		<%= f.label :rating %>
+		<%= f.text_field :rating %>
+	</div>
+
+	<div class="field">
+		<%= f.label :entry %>
+		<%= f.text_field :entry %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	
+<%end%>
+</div>
+
