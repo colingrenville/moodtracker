@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'moods/index'
+  resources :moods, only: [:index, :new, :create]
+  resources :users, only: [:new, :create] 
 
-  get 'moods/show'
-
-  get 'moods/new'
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

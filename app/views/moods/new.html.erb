@@ -1,7 +1,17 @@
 <p id="newtitle">New Day</p>
 
 <div class="yourmood">
-<%= form_for @mood do |f| %>
+<%= form_for(@mood) do |f| %>
+	<% if @mood.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@mood.errors.count, "error") %> prohibited your shit from being saved, dude:</h2>
+			<ul>
+			<% @mood.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<%end%>
 
 	<div class="field">
 		<%= f.label :rating %>
